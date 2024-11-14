@@ -89,7 +89,7 @@
 
         /* About Section */
         #about {
-            color: white;
+          
             padding: 120px 20px;
             border-bottom: 10px solid #f79c42;
         }
@@ -101,7 +101,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+        
             z-index: 1;
         }
 
@@ -262,6 +262,15 @@
                 margin-bottom: 20px;
             }
         }
+        .grain{
+            display: inline-block;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: black;
+  background: linear-gradient(90deg, #f79c42, #ff6b81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+        }
 
     </style>
 </head>
@@ -272,14 +281,14 @@
     <p>Web izstrādātājs | Dizainers | Programmētājs</p>
 </header>
 <section id="about">
-    <h2>Par mani</h2>
+    <div class="grain">Par mani</div>
     <p>Es esmu Niks Markuss Liepa</p>
     <p>Esmu no limbaziem.</p>
     <p>Es tagad mācos vtdt</p>
 </section>
 
 <section id="skills">
-    <h2>Manas Prasmes</h2>
+    <h2 class="grain">Manas Prasmes</h2>
     <div class="skill-item">
         <h3>HTML & CSS</h3>
         <p>Tīmekļa lapu struktūru un dizainu izveide.</p>
