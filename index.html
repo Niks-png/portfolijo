@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personīgais portfelis ar unikālu dizainu">
+    <title>Manas Portfelis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #e4f0f5;
+            color: #2c3e50;
+            line-height: 1.6;
+            height: 100vh;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #ff6b81, #f79c42);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 14px 30px;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            background: #f79c42;
+        }
+
+        /* Main Sections */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        /* About Section */
+        #about {
+            color: white;
+            padding: 120px 20px;
+            border-bottom: 10px solid #f79c42;
+        }
+
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        #about h2, #about p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 80px 20px;
+            margin-top: -40px;
+        }
+
+        #skills h2 {
+            grid-column: span 4;
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .skill-item {
+            background: #f7f7f7;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-item h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        .skill-item p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: linear-gradient(90deg, #f79c42, #ff6b81);
+            padding: 80px 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        #projects h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+        }
+
+        .project-item {
+            position: relative;
+            background-color: white;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-item h3 {
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        .project-item p {
+            font-size: 1.2em;
+            color: #777;
+            margin: 15px 0;
+        }
+
+        .project-item a {
+            background-color: #f79c42;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-item a:hover {
+            background-color: #ff6b81;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 1.1em;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #f79c42;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            #skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-item {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #skills {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .project-item {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Manas Portfolijo</h1>
+    <p>Web izstrādātājs | Dizainers | Programmētājs</p>
+</header>
+<section id="about">
+    <h2>Par mani</h2>
+    <p>Es esmu Niks Markuss Liepa</p>
+    <p>Esmu no limbaziem.</p>
+    <p>Es tagad mācos vtdt</p>
+</section>
+
+<section id="skills">
+    <h2>Manas Prasmes</h2>
+    <div class="skill-item">
+        <h3>HTML & CSS</h3>
+        <p>Tīmekļa lapu struktūru un dizainu izveide.</p>
+    </div>
+    <div class="skill-item">
+        <h3>Gulēšanaana</h3>
+        <p>zzzzzzzzzzzzzzzzzzzzzzzzz</p>
+    </div>
+
+    </div>
+    <div class="skill-item">
+        <h3>Git & GitHub</h3>
+        <p>Koda versiju kontrole un sadarbība ar komandu.</p>
+    </div>
+
+    <div class="skill-item">
+        <h3>Gaming</h3>
+        <p>Yes i play games.</p>
+    </div>
+</section>
+<section id="projects" class="projects">
+    <h2>Mani Projekti</h2>
+    <div class="project">
+        <div class="project-info">
+            <h3>Projekts 1: Web lapa</h3>
+            <p>Šis projekts ietver web lapas izstrādi, izmantojot HTML, . Esmu izstrādājis tīmekļa vietni .</p>
+            <a href="https://vercel.com/niks-projects-5ebcd7f3/liepa-ipb23" target="_blank">Skatīt projektu</a>
+        </div>
+    </div>
+    <div class="project">
+        <div class="project-info">
+            <h3>Projekts 2: web lapa</h3>
+            <p>Šis projekts ietver web lapas izstrādi, izmantojot HTML, . Esmu izstrādājis tīmekļa vietni .</p>
+            <a href="https://vercel.com/niks-projects-5ebcd7f3/kaktuss" target="_blank">Skatīt projektu</a>
+        </div>
+    </div>
+</section>
+<footer>
+
+</footer>
+
+</body>
+</html>
